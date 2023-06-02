@@ -1,0 +1,48 @@
+scalar URL
+
+type Query {
+  hello(name: String!): String
+  siteAnnouncement(couponCode: String): SiteAnnouncement
+  viewer: User!
+}
+
+type SiteAnnouncement {
+  "The pre-formatted content of the announcement"
+  contentHTML: String!
+  "The url to a page with more content related to the announcement"
+  linkUrl: URL
+  "Denotes whether authentication is required for the url"
+  requiresAuthentication: Boolean!
+}
+
+type User {
+  "The first name."
+  firstName: String!
+  "The flag indicating whether a user has published a class."
+  hasPublishedClass: Boolean!
+  "The flag indicating if the user is a Top Teacher."
+  isTopTeacher: Boolean!
+  "The URL address of the large size profile picture."
+  largePictureUrl: URL
+  "The last name."
+  lastName: String!
+  "The URL address of the medium size profile picture."
+  mediumPictureUrl: URL
+  "The users notifications."
+  notifications: UserNotifications!
+}
+
+"The users notifications."
+type UserNotifications {
+  "The number of notifications. Will be overriden by the custom mock"
+  count: Float!
+}
+
+type Mutation {
+  goodbye(name: String!): String
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

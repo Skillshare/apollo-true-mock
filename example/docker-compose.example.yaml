@@ -1,0 +1,14 @@
+version: "2"
+services:
+  bun-app:
+    build:
+      context: ..
+    ports:
+      - 8080:8080
+    volumes:
+      - ./simple-schema.graphql/:/home/bun/app/schema.graphql
+      - ./custom-mocks-example.ts:/home/bun/app/custom-mocks.ts
+    environment:
+      # These are actually equivalent to the defaults. Writing these out for clarity.
+      - ATM_TYPE_DEFS_PATH=/home/bun/app/schema.graphql
+      - ATM_CUSTOM_MOCKS_PATH=/home/bun/app/custom-mocks.ts
