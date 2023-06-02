@@ -1,0 +1,12 @@
+type Query {
+  hello(name: String!): String
+}
+
+type Mutation {
+  goodbye(name: String!): String
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

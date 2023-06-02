@@ -1,0 +1,11 @@
+version: "2"
+services:
+  bun-app:
+    build:
+      context: .
+    ports:
+      - 8080:8080
+    volumes:
+      - ./simple-schema.graphql/:/home/bun/app/schema.graphql
+    environment:
+      - ATM_SCHEMA_DEF=/home/bun/app/schema.graphql

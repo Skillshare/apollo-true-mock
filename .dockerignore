@@ -1,0 +1,7 @@
+node_modules
+.vscode
+.github
+.circleci
+docker
+kubernetes
+simple-schema.graphql
