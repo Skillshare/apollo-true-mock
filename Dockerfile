@@ -3,4 +3,4 @@ COPY bun.lockb package.json .
 RUN bun install
 COPY . .
 EXPOSE 8080
-CMD ["bun", "index.ts"]
+CMD ["/bin/sh", "./entrypoint.sh"]
